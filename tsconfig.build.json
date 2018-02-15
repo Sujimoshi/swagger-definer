@@ -9,5 +9,5 @@
     "noImplicitReturns": true,
     "strictFunctionTypes": true
   },
-  "include": ["src/**/*", "test/**/*"]
+  "include": ["src/**/*"]
 }

@@ -2,11 +2,12 @@
   "name": "swagger-annotations",
   "version": "1.0.0",
   "description": "",
-  "main": "src/swagger.js",
+  "main": "src/swagger.ts",
   "scripts": {
     "test": "./node_modules/.bin/mocha -r ts-node/register test/**/*.test.ts",
     "test:watch": "./node_modules/.bin/mocha -r ts-node/register --recursive --watch --reporter=min",
-    "test:cover": "./node_modules/.bin/nyc mocha -r ts-node/register --recursive"
+    "test:cover": "./node_modules/.bin/nyc mocha -r ts-node/register --recursive",
+    "build": "rm -rf ./dist && ./node_modules/.bin/tsc --p ./tsconfig.build.json"
   },
   "keywords": [],
   "author": "",
