@@ -1,5 +1,6 @@
-const { assert } = require("chai")
-const Path = require("../src/path")
+import { assert } from "chai"
+
+import Path from "../src/path"
 
 describe("Path class tester", () => {
   it("#parseType - should correctly map type to schema", () => {

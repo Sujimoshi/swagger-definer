@@ -1,5 +1,6 @@
-const { assert } = require("chai")
-const Definition = require("../src/definition")
+import { assert } from "chai"
+
+import Definition from "../src/definition"
 
 describe("Definition class tester", () => {
   it("Should correctly resolve types", () => {
