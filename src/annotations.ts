@@ -9,7 +9,9 @@ export default (swagger: Swagger) => {
   let reflections: ReflectionData[] = []
 
   const findOrCreateReflection = (def: ReflectionData) => {
-    let found = reflections.find((el: ReflectionData) => el.target === def.target && el.key === def.key)
+    let found
+    reflections.forEach((el: ReflectionData) => 
+      found = el.target === def.target && el.key === def.key ? el : undefined)
     if(found === undefined) reflections.push(found = def)
     return found
   }
