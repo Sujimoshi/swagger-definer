@@ -25,7 +25,7 @@ describe("Annotations tests", () => {
       @parameter("body", "body", "string", true, "User instance")
       @response("default", "Success", "string")
       @security("jwt")
-      create() {
+      createAction() {
         console.log('User created')
       }
     }
