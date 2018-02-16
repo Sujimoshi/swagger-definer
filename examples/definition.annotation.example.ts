@@ -1,7 +1,7 @@
 import Annotations from "../src/annotations"
 import Swagger from "../src/swagger"
 
-const { definition, property } = Annotations(new Swagger("example.com", "/api"))
+const { definition, property } = new Swagger("example.com", "/api").annotations()
 
 @definition("User")
 class User {

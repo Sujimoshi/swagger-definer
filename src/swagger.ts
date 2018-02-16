@@ -3,6 +3,7 @@ import { Spec, Info, ExternalDocs, Schema, BodyParameter, QueryParameter, Securi
 
 import Definition from "./definition"
 import Path from "./path"
+import Annotations from "./annotations"
 
 export default class Swagger {
   spec: Spec
@@ -68,6 +69,10 @@ export default class Swagger {
 
   validate() {
     return bundle(this.toJSON())
+  }
+
+  annotations() {
+    return Annotations(this)
   }
 
   toJSON() {

@@ -4,15 +4,13 @@ import Swagger from "../src/swagger"
 describe("Annotations tests", () => {
 
   let swagger: Swagger
-  let annotations: any
 
   beforeEach(() => {
     swagger = new Swagger("some.com", "/api")
-    annotations = Annotations(swagger)
   })
 
   it("Path annotations", (done) => {
-    const { path, parameter, response, security } = annotations
+    const { path, parameter, response, security } = swagger.annotations()
     swagger.security("jwt", {
       type: "apiKey",
       name: "Authorization",
@@ -39,7 +37,7 @@ describe("Annotations tests", () => {
   })
 
   it("Defintion annotations", (done) => {
-    const { definition, property } = annotations
+    const { definition, property } = swagger.annotations()
 
     @definition("User")
     class User {
