@@ -1,12 +1,5 @@
 import { Operation, ExternalDocs, Parameter, Security, Response, Schema, Path as SwgPath, Header } from "swagger-schema-official";
 
-/**
- * @request(post, /api/user) Create user
- * @parameter?(user, body, array, #/definitions/User) User parameter
- * @response(200, object, #/definitions/User) Success
- * @response(default, #/definitions/Error) Error
- */
-
 export default class Path {
   operation: Operation
   path: string
