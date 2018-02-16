@@ -1,7 +1,7 @@
 import Annotations from "../src/annotations"
 import Swagger from "../src/swagger"
 
-const {path, parameter, response} = Annotations(new Swagger("example.com", "/api"))
+const {path, parameter, response, security} = Annotations(new Swagger("example.com", "/api"))
 
 // Annotations not working without class
 class UserController {
@@ -10,6 +10,7 @@ class UserController {
   @parameter("body", "body", "string", true, "User instance")
   @response("200", "Success", "string")
   @response("default", "Error", "string")
+  @security("jwt")
   create() {
     console.log('User created')
   }

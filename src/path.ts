@@ -30,7 +30,8 @@ export default class Path {
       operationId,
       tags,
       parameters: [],
-      responses: {}
+      responses: {},
+      security: []
     }
   }
 
@@ -58,6 +59,10 @@ export default class Path {
       description, headers, schema,
     }
     return this
+  }
+
+  security(name: string, scopes: string[] = []) {
+    this.operation.security.push({ [name]: scopes } as any)
   }
 
   toJSON() {

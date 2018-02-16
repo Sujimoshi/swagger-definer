@@ -6,6 +6,7 @@ swg.path("/user", "post", "createUser", ["user"], "Create user")
   .parameter("body", "body", "string", true, "User instance")
   .response("200", "Success", "string")
   .response("default", "Success", "string")
+  .security("jwt")
 function createUserAction() {
   console.log('User created')
 }

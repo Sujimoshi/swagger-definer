@@ -33,6 +33,7 @@ export default class Swagger {
       paths: {},
       definitions: {},
       tags: [],
+      securityDefinitions: {}
     }
   }
 
@@ -59,6 +60,10 @@ export default class Swagger {
     const newPath = new Path(path, type, operationId, tags, description, produces, consumes)
     this.spec.paths[path] = { ...this.spec.paths[path], ...{ [type]: newPath.toJSON() } }
     return newPath
+  }
+
+  security(name: string, securityDefinition: Security) {
+    this.spec.securityDefinitions[name] = securityDefinition
   }
 
   validate() {

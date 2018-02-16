@@ -1,9 +1,17 @@
 import Swagger from "../src/swagger"
+import { ApiKeySecurity } from "swagger-schema-official";
 
 describe("Swagger definition test", () => {
   it("should create valid definition", (done: () => {}) => {
     const swg = new Swagger("petstore.swagger.io", "/v2")
     swg.tag("user", "User operations")
+    const jwt: ApiKeySecurity = {
+      type: "apiKey",
+      name: "Authorization",
+      in: "header",
+      description: "JWT Auth"
+    }
+    swg.security("jwt", jwt)
 
     // Error definition
     const error = swg.definition("Error")
@@ -24,6 +32,7 @@ describe("Swagger definition test", () => {
     userPost.parameter("limit", "query", "integer", false, "Number of users to recive")
     userPost.response("200", "Success", "#/definitions/User")
     userPost.response("default", "Error response", "#/definitions/Error")
+    userPost.security("jwt")
 
     swg.validate().then(() => {
       done()

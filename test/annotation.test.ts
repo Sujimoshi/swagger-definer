@@ -12,12 +12,19 @@ describe("Annotations tests", () => {
   })
 
   it("Path annotations", (done) => {
-    const { path, parameter, response } = annotations
-
+    const { path, parameter, response, security } = annotations
+    swagger.security("jwt", {
+      type: "apiKey",
+      name: "Authorization",
+      in: "header",
+      description: "JWT Auth"
+    })
+    
     class UserController {
       @path("/user", "post", "createUser", ["user"], "Create user")
       @parameter("body", "body", "string", true, "User instance")
       @response("default", "Success", "string")
+      @security("jwt")
       create() {
         console.log('User created')
       }
