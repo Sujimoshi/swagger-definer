@@ -7,7 +7,8 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
-    "strictFunctionTypes": true
+    "strictFunctionTypes": true,
+    "experimentalDecorators": true
   },
-  "include": ["src/**/*", "test/**/*"]
+  "include": ["src/**/*", "test/**/*", "examples/**/*"]
 }

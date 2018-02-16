@@ -2,10 +2,10 @@
   "name": "swagger-definer",
   "version": "1.0.0",
   "description": "",
-  "main": "src/swagger.ts",
+  "main": "dist/swagger.ts",
   "scripts": {
-    "test": "./node_modules/.bin/mocha -r ts-node/register --recursive",
-    "test:watch": "./node_modules/.bin/mocha -r ts-node/register --recursive --watch --reporter=min",
+    "test": "./node_modules/.bin/mocha -r ts-node/register --recursive test/**/*.test.ts",
+    "test:watch": "./node_modules/.bin/mocha -r ts-node/register --watch --watch-extensions ts --reporter=min test/**/*.test.ts",
     "build": "rm -rf ./dist && ./node_modules/.bin/tsc --p ./tsconfig.build.json"
   },
   "keywords": [],

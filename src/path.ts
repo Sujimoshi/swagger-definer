@@ -18,8 +18,8 @@ export default class Path {
     operationId: string,
     tags: string[] = [],
     description = "",
-    produces: string[],
-    consumes: string[],
+    produces?: string[],
+    consumes?: string[],
   ) {
     this.path = path
     this.method = method

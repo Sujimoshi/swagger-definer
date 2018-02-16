@@ -6,6 +6,7 @@ import Path from "./path"
 
 export default class Swagger {
   spec: Spec
+  reflections: any[] = []
 
   constructor(
     host: string,
