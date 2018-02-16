@@ -44,7 +44,7 @@ export default class Path {
     return isArray ? { type: "array", items: resultType } : resultType
   }
 
-  parameter(name: string, place: string, schema: string|Schema, required: boolean = true, description?: string): this {
+  parameter(name: string, place: string, schema: string|Schema, required: boolean = true, description?: string): Path {
     schema = Path.parseSchema(schema)
     this.operation.parameters.push({
       name, in: place, description, required, schema,
@@ -52,7 +52,7 @@ export default class Path {
     return this
   }
 
-  response(responseName: string, description: string, schema: string|Schema, headers?: { [headerName: string]: Header }): this {
+  response(responseName: string, description: string, schema: string|Schema, headers?: { [headerName: string]: Header }): Path {
     schema = Path.parseSchema(schema)
     this.operation.responses[responseName] = {
       description, headers, schema,
