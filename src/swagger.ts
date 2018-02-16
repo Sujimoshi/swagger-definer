@@ -63,8 +63,9 @@ export default class Swagger {
     return newPath
   }
 
-  security(name: string, securityDefinition: Security) {
+  security(name: string, securityDefinition: Security): Swagger {
     this.spec.securityDefinitions[name] = securityDefinition
+    return this
   }
 
   validate() {

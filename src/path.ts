@@ -61,8 +61,9 @@ export default class Path {
     return this
   }
 
-  security(name: string, scopes: string[] = []) {
+  security(name: string, scopes: string[] = []): Path {
     this.operation.security.push({ [name]: scopes } as any)
+    return this
   }
 
   toJSON() {
