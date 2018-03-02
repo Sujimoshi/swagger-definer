@@ -1,4 +1,3 @@
-import Annotations from "../src/annotations"
 import Swagger from "../src/swagger"
 
 const { definition, property } = new Swagger("example.com", "/api").annotations()

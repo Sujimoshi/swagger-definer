@@ -84,6 +84,8 @@ class UserController {
 }
 ```
 
+For more examples see: <https://github.com/Sujimoshi/swagger-definer/tree/master/examples>
+
 ## About types
 ```js
 Definition.prototype.property(
