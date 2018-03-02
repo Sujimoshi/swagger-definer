@@ -68,7 +68,7 @@ export default class Swagger {
     return this
   }
 
-  validate() {
+  validate(): Promise<Spec> {
     return bundle(this.toJSON())
   }
 
@@ -76,7 +76,7 @@ export default class Swagger {
     return Annotations(this)
   }
 
-  toJSON() {
+  toJSON(): Spec {
     return JSON.parse(JSON.stringify(this.spec))
   }
 }

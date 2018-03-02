@@ -15,7 +15,7 @@ describe("Swagger definition test", () => {
 
     // Error definition
     const error = swg.definition("Error")
-    error.property("message", "string", "Error message", true)
+    error.property("message", "string", "Error message", true, "Unexpected server error")
 
     // User definition
     const user = swg.definition("User")
