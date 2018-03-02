@@ -8,8 +8,8 @@
     "test:watch": "./node_modules/.bin/mocha -r ts-node/register --watch --watch-extensions ts --reporter=min test/**/*.test.ts",
     "build": "rm -rf ./dist && ./node_modules/.bin/tsc --p ./tsconfig.build.json"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["swagger", "nodejs", "annotations", "decorators", "documentation", "api"],
+  "author": "https://github.com/Sujimoshi",
   "license": "ISC",
   "dependencies": {
     "swagger-parser": "^4.0.2"
