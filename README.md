@@ -100,7 +100,8 @@ Definition.prototype.property(
 )
 ```
 Types parsing table:
-Common Name | [`type`](#dataTypeType) | [`format`](#dataTypeFormat) | Comments
+
+Common Name | type | format | Comments
 ----------- | ------ | -------- | --------
 integer | `integer` | `int32` | signed 32 bits
 long | `integer` | `int64` | signed 64 bits
