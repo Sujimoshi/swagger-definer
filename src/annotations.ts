@@ -1,7 +1,7 @@
 import Swagger from "./swagger"
 import Path from "./path"
-import { Schema, Header } from "swagger-schema-official";
-import Definition from "./definition";
+import { Schema, Header } from "swagger-schema-official"
+import Definition from "./definition"
 
 type ReflectionData = { target: any, key?: string, data: any }
 
@@ -52,10 +52,10 @@ export default (swagger: Swagger) => {
         const definitionInstance: Definition = swagger.definition(name)
         data.definitions.forEach((el: any) => definitionInstance.property(el.name, el.type, el.description, el.required))
       },
-    property: (name: string, type: string | Schema, description: string = "", required: boolean = true): any => 
+    property: (name: string, type: string | Schema, description: string = "", required: boolean = true, example: any = ""): any => 
       (target: any, key: string, property: PropertyDescriptor) => {
         let data = findOrCreateReflection({ target, data: definitionDefaultData })
-        data.definitions.push({ name, type, description, required })
+        data.definitions.push({ name, type, description, required, example })
       }
   }
 }

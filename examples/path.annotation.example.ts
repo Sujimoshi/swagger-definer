@@ -1,7 +1,7 @@
 import Annotations from "../src/annotations"
 import Swagger from "../src/swagger"
 
-const {path, parameter, response, security} = new Swagger("example.com", "/api").annotations()
+const { path, parameter, response, security } = new Swagger("example.com", "/api").annotations()
 
 // Annotations not working without class
 class UserController {

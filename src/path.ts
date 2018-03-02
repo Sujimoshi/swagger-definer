@@ -1,4 +1,5 @@
-import { Operation, ExternalDocs, Parameter, Security, Response, Schema, Path as SwgPath, Header } from "swagger-schema-official";
+import { Operation, ExternalDocs, Parameter, Security, Response, Schema, Path as SwgPath, Header } from "swagger-schema-official"
+import { parseSchema } from "./types"
 
 export default class Path {
   operation: Operation
@@ -28,18 +29,8 @@ export default class Path {
     }
   }
 
-  static parseSchema(schema: string|Schema): Schema {
-    if (typeof schema !== "string") return schema
-    const match = schema.match(/^(\[?)(.+?)(\]?)$/)
-    const type = match[2]
-    const typeKey = type[0] === "#" ? "$ref" : "type"
-    const isArray = match[1] === "[" && match[3] === "]"
-    const resultType = { [typeKey]: type }
-    return isArray ? { type: "array", items: resultType } : resultType
-  }
-
   parameter(name: string, place: string, schema: string|Schema, required: boolean = true, description?: string): Path {
-    schema = Path.parseSchema(schema)
+    schema = parseSchema(schema)
     this.operation.parameters.push({
       name, in: place, description, required, schema,
     })
@@ -47,7 +38,7 @@ export default class Path {
   }
 
   response(responseName: string, description: string, schema: string|Schema, headers?: { [headerName: string]: Header }): Path {
-    schema = Path.parseSchema(schema)
+    schema = parseSchema(schema)
     this.operation.responses[responseName] = {
       description, headers, schema,
     }
