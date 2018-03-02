@@ -10,6 +10,9 @@
   },
   "keywords": ["swagger", "nodejs", "annotations", "decorators", "documentation", "api"],
   "author": "https://github.com/Sujimoshi",
+  "repository": {
+    "url": "https://github.com/Sujimoshi/swagger-definer"
+  },
   "license": "ISC",
   "dependencies": {
     "swagger-parser": "^4.0.2"
