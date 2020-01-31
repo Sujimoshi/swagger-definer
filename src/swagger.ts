@@ -1,5 +1,5 @@
 import { bundle } from "swagger-parser"
-import { Spec, Info, ExternalDocs, Schema, BodyParameter, QueryParameter, Security, Tag } from "swagger-schema-official"
+import { Spec, Header, Info, ExternalDocs, Schema, BodyParameter, QueryParameter, Security, Tag } from "swagger-schema-official"
 
 import Definition from "./definition"
 import Path from "./path"
